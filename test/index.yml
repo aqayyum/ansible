@@ -1,0 +1,16 @@
+---
+- name: Conifg index
+  hosts: all
+  become: yes
+  tasks:
+
+   - name: write apache config 
+     template: src=index.j2 dest=/var/www/test2/index.html
+
+   - name: start apache 
+     service: name=httpd state=restarted
+
+
+  handlers:
+   - name: start apache
+     service: name=httpd state=reloaded
