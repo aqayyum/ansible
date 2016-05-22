@@ -1,0 +1,9 @@
+[new]
+worker1 ansible_user=tt
+
+[new2]
+worker2 ansible_user=tt
+
+[test]
+worker1 ansible_user=tt
+worker2 ansible_user=tt
