@@ -1,0 +1,7 @@
+<VirtualHost {{ ansible_all_ipv4_addresses[1] }}:80>
+    ServerName {{ ansible_all_ipv4_addresses[1] }} 
+    ServerAlias {{ ansible_hostname }}
+    DocumentRoot "/var/www/test/"
+    ErrorLog /var/log/httpd/{{ ansible_hostname }}error.log
+    CustomLog /var/log/httpd/{{ ansible_hostname }}requests.log combined
+</VirtualHost>
