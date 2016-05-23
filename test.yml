@@ -1,6 +1,6 @@
 ---
 - name: Stop and Config vhost1
-  hosts: test
+  hosts: new
   become: yes
   tasks:
    - name: stop apache 
@@ -11,7 +11,7 @@
 
 
 - name: Stop and Config vhost2
-  hosts: test2
+  hosts: new2
   become: yes
   tasks:
    - name: stop apache 
@@ -23,7 +23,7 @@
 
 
 - name: Start vhost1
-  hosts: test
+  hosts: new
   become: yes
 
   tasks:
@@ -31,7 +31,7 @@
      service: name=httpd state=started
 
 - name: Start vhost2
-  hosts: test2
+  hosts: new2
   become: yes
 
   tasks:
